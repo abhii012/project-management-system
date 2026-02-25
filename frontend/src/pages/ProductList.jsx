@@ -41,7 +41,7 @@ export default function ProductList() {
       </Link>
 <div className=" flex flex-wrap  gap-2 md:gap-8 justify-center mt-20">
       {products.map(p => (
-        <div className="w-38 md:w-48 bg-amber-300 p-3 rounded-md flex flex-col text-center lg:gap-3 shadow scale-100" key={p._id}>
+        <div className="w-38 md:w-48 bg-amber-300 p-3 rounded-md flex flex-col text-center justify-around lg:gap-3 shadow scale-100" key={p._id}>
           <div className=" text-sm lg:text-lg flex flex-col gap-1"> <div>{p.name}</div>
            <div>Price: {p.price}</div>
            <div>Category: {p.category}</div>
