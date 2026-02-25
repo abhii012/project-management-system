@@ -7,8 +7,14 @@ const productRoutes=require('./routes/productRoutes')
 const app=express()
 app.use(express.json());
 app.use(cors({
-  origin: "*"
+  origin: [
+    "https://project-management-system-gx4s.vercel.app",
+    "http://localhost:5173"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
 }));
+app.options("*", cors());
 
 
 mongoose.connect(process.env.MONGO_URI)
