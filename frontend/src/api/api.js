@@ -1,9 +1,9 @@
 import axios from "axios";
 
-const API = "http://localhost:5000/api/products";
+const API = import.meta.env.VITE_API_URL;
 
-export const getProducts = () => axios.get(API);
-export const createProduct = data => axios.post(API, data);
-export const updateProduct = (id, data) => axios.put(`${API}/${id}`, data);
-export const deleteProduct = id => axios.delete(`${API}/${id}`);
-export const getProduct = id => axios.get(`${API}/${id}`);
+export const getProducts = () => axios.get(`${API}/products`);
+export const createProduct = data => axios.post(`${API}/products`, data);
+export const updateProduct = (id, data) => axios.put(`${API}/products/${id}`, data);
+export const deleteProduct = id => axios.delete(`${API}/products/${id}`);
+export const getProduct = id => axios.get(`${API}/products/${id}`);
