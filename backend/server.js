@@ -6,23 +6,8 @@ const productRoutes=require('./routes/productRoutes')
 
 const app=express()
 app.use(express.json());
-app.use(cors({
-  origin: (origin, callback) => {
-    if (!origin) return callback(null, true);
+app.use(cors());
 
-    if (
-      origin.includes("vercel.app") ||
-      origin.includes("localhost")
-    ) {
-      return callback(null, true);
-    }
-
-    callback(new Error("Not allowed by CORS"));
-  },
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  credentials: true
-}));
-app.options("*", cors());
 
 
 mongoose.connect(process.env.MONGO_URI)
